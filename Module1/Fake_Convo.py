@@ -122,6 +122,10 @@ def main():
 		print("I " + feeling)
 	elif(feeling[8:10] == "it"):
 		print("I " + feeling)
+	elif(feeling[5:14] == "Big Iron"):
+		print("I " + feeling)
+	elif(feeling[8:17] == "Big Iron"):
+		print("I " + feeling)
 	else:
 		print("I " + feeling + ' "Big Iron".')
 main()
