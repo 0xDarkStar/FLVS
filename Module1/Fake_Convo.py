@@ -3,7 +3,7 @@
 def main():
 #Code
 	print("Hello, my name is Jacob! What is your name?")
-	userName = input("What is your name?")
+	userName = input("What is your name? ")
 	print("")
 
 #User
@@ -15,22 +15,22 @@ def main():
 	print("Can you think of an object that starts with " + userName[2:3] + "?")
 	print("")
 
-	object = input("What's an object that starts with " + userName[2:3] + "?")
+	object = input("What's an object that starts with " + userName[2:3] + "? ")
 
 	if(userName[2:3] == "a"):
-		print("Hmmm.... How about an " + object + "?")
+		print("Hmmm.... How about an " + object + "? ")
 	
 	elif(userName[2:3] == "e"):
-		print("Hmmm.... How about an " + object + "?")
+		print("Hmmm.... How about an " + object + "? ")
 	
 	elif(userName[2:3] == "i"):
-		print("Hmmm.... How about an " + object + "?")
+		print("Hmmm.... How about an " + object + "? ")
 	
 	elif(userName[2:3] == "o"):
-		print("Hmmm.... How about an " + object + "?")
+		print("Hmmm.... How about an " + object + "? ")
 
 	else:
-		print("Hmmm.... How about a " + object + "?")
+		print("Hmmm.... How about a " + object + "? ")
 
 #Code
 	print("")
@@ -105,7 +105,7 @@ def main():
 #User
 	print("")
 	
-	feeling = input("How do you feel about 'Big Iron' (It's a song)")
+	feeling = input("How do you feel about 'Big Iron' (It's a song) ")
 	
 	if(feeling[0:1] == "I"):
 		if(feeling[7:9] == "it"):
