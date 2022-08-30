@@ -22,7 +22,7 @@ def main():
 
 		object = input("What's an object that starts with " + userName_noSpace[-1] + "? ")
 
-		if(userName_noSpace[-1] == "a"):
+		if(object[0] == "a" or object[0] == "e" or object[0] == "i" or object[0] == "o"):
 			print("\nHmmm.... How about an " + object + "?\n")
 		else:
 			print("\nHmmm.... How about a " + object + "?\n")
@@ -32,7 +32,7 @@ def main():
 		object = input("What's an object that starts with " + userName_noSpace[2] + "? ")
 		print(object)
 
-		if(object[0] == "a", "e", "i", "o"):
+		if(object[0] == "a" or object[0] == "e" or object[0] == "i" or object[0] == "o"):
 			print("\nHmmm.... How about an " + object + "?\n")
 		else:
 			print("\nHmmm.... How about a " + object + "?\n")
