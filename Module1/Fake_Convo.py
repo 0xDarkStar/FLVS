@@ -12,7 +12,6 @@ def main():
 	if(userName[2:3] == ' '):
 		print("Nice to meet you, " + userName + "! I can see that your name has " + userName[1:2] + " as the 2nd letter.")
 		print("Can you think of an object that starts with " + userName[1:2] + "?")
-		print("")
 
 		object = input("What's an object that starts with " + userName[1:2] + "? ")
 
@@ -23,7 +22,6 @@ def main():
 	else:
 		print("Nice to meet you, " + userName + "! I can see that your name has " + userName[2:3] + " as the 3rd letter.")
 		print("Can you think of an object that starts with " + userName[2:3] + "?")
-		print("")
 
 		object = input("What's an object that starts with " + userName[2:3] + "? ")
 
