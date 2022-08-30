@@ -1,5 +1,7 @@
 #This program is meant to simulate a conversation between the user and a chat bot.
 
+import time
+
 def main():
 #Code
 	print("Hello, my name is Jacob! What is your name?")
@@ -30,7 +32,6 @@ def main():
 		print("Nice to meet you, " + userName + "! I can see that your name has " + userName_noSpace[2] + " as the 3rd letter.")
 
 		object = input("What's an object that starts with " + userName_noSpace[2] + "? ")
-		print(object)
 
 		if(object[0] == "a" or object[0] == "e" or object[0] == "i" or object[0] == "o"):
 			print("\nHmmm.... How about an " + object + "?\n")
@@ -42,6 +43,7 @@ def main():
 	print("I love " + object + "!")
 	print("But do you know what I love more?")
 	print('"Big Iron".\n')
+	time.sleep(2)
 
 #This to next comment is not required
 
@@ -98,6 +100,7 @@ def main():
 	print("When he tried to match the ranger with the big iron on his hip\n")
 	
 	print("Big iron on his hip\n")
+	time.sleep(2)
 
 #This to previous comment is not required
 
@@ -121,6 +124,8 @@ def main():
 		print("I don't understand")
 """
 old code
+it's bad...
+very bad...
 
 	if(feeling[0:1] == "I"):
 		if(feeling[7:9] == "it"):
