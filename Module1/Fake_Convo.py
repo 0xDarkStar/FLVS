@@ -4,28 +4,35 @@ def main():
 #Code
 	print("Hello, my name is Jacob! What is your name?")
 	userName = input("What is your name? ")
+	userName_length = len(userName)
+	userName_noSpace = userName.replace(' ','').lower()
+	while userName_length == 0:
+		print("You didn't put in a name")
+		userName = input("What is your name? ")
+		userName_length = len(userName)
+		userName_noSpace = userName.replace(' ','').lower()
 
 #User
 	print("\nHello, Jacob! My name is " + userName + ".\n")
 
 #Code
-	if(userName[2:3] == ' '):
-		print("Nice to meet you, " + userName + "! I can see that your name has " + userName[1:2] + " as the 2nd letter.")
-		print("Can you think of an object that starts with " + userName[1:2] + "?")
 
-		object = input("What's an object that starts with " + userName[1:2] + "? ")
+	if(1 <= userName_length <= 2):
+		print("Nice to meet you, " + userName + "! I can see that your name has " + userName_noSpace[-1] + " in it.")
 
-		if(userName[1:2] == "a", "e", "i", "o"):
+		object = input("What's an object that starts with " + userName_noSpace[-1] + "? ")
+
+		if(userName_noSpace[-1] == "a"):
 			print("\nHmmm.... How about an " + object + "?\n")
 		else:
 			print("\nHmmm.... How about a " + object + "?\n")
 	else:
-		print("Nice to meet you, " + userName + "! I can see that your name has " + userName[2:3] + " as the 3rd letter.")
-		print("Can you think of an object that starts with " + userName[2:3] + "?")
+		print("Nice to meet you, " + userName + "! I can see that your name has " + userName_noSpace[2] + " as the 3rd letter.")
 
-		object = input("What's an object that starts with " + userName[2:3] + "? ")
+		object = input("What's an object that starts with " + userName_noSpace[2] + "? ")
+		print(object)
 
-		if(userName[2:3] == "a", "e", "i", "o"):
+		if(object[0] == "a", "e", "i", "o"):
 			print("\nHmmm.... How about an " + object + "?\n")
 		else:
 			print("\nHmmm.... How about a " + object + "?\n")
@@ -137,4 +144,5 @@ old code
 	else:
 		print("I " + feeling + ' "Big Iron".')
 """
+
 main()
