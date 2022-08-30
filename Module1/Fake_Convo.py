@@ -4,48 +4,53 @@ import time
 
 def main():
 #Code
+	#Bot introduces self and asks for User's name
+
 	print("Hello, my name is Jacob! What is your name?")
+
+#User
+	#User's response
+
 	userName = input("What is your name? ")
-	userName_length = len(userName)
-	userName_noSpace = userName.replace(' ','').lower()
+	userName_length = len(userName)		#Making variable of the length for future use, once
+	userName_noSpace = userName.replace(' ','').lower() 	#To get rid of spaces if User decided to add any
 	while userName_length == 0:
-		print("You didn't put in a name")
+		print("You didn't put in a name")		#If the User got here then they didn't put anything as their name
 		userName = input("What is your name? ")
 		userName_length = len(userName)
 		userName_noSpace = userName.replace(' ','').lower()
 
-#User
 	print("\nHello, Jacob! My name is " + userName + ".\n")
 
 #Code
 
-	if(1 <= userName_length <= 2):
+	if(1 <= userName_length <= 2):	#Code checks if name is between 1 and 2 letters long
 		print("Nice to meet you, " + userName + "! I can see that your name has " + userName_noSpace[-1] + " in it.")
 
-		object = input("What's an object that starts with " + userName_noSpace[-1] + "? ")
+		object = input("What's an object that starts with " + userName_noSpace[-1] + "? ")	#Asks User to think of an object using a specified letter
 
-		if(object[0] == "a" or object[0] == "e" or object[0] == "i" or object[0] == "o"):
+		if(object[0] == "a" or object[0] == "e" or object[0] == "i" or object[0] == "o"): #Checking for vowels to have correct grammer
 			print("\nHmmm.... How about an " + object + "?\n")
 		else:
 			print("\nHmmm.... How about a " + object + "?\n")
-	else:
+	else:	#If user gets to this point then their name is 3 letters long or more
 		print("Nice to meet you, " + userName + "! I can see that your name has " + userName_noSpace[2] + " as the 3rd letter.")
 
-		object = input("What's an object that starts with " + userName_noSpace[2] + "? ")
+		object = input("What's an object that starts with " + userName_noSpace[2] + "? ")	#Asks User to think of an object using a specified letter
 
-		if(object[0] == "a" or object[0] == "e" or object[0] == "i" or object[0] == "o"):
+		if(object[0] == "a" or object[0] == "e" or object[0] == "i" or object[0] == "o"):	#Checking for vowels to have correct grammer
 			print("\nHmmm.... How about an " + object + "?\n")
 		else:
 			print("\nHmmm.... How about a " + object + "?\n")
 
 
 #Code
-	print("I love " + object + "!")
+	print("I love " + object + "!")		#Code claims that it loves the object stated by User
 	print("But do you know what I love more?")
 	print('"Big Iron".\n')
-	time.sleep(2)
+	time.sleep(2)	
 
-#This to next comment is not required
+#This to next comment is not required. It's all a little joke I chose to do
 
 	print("To the town of Agua Fria rode a stranger one fine day")
 	print("Hardly spoke to folks around him didn't have too much to say")
@@ -67,7 +72,7 @@ def main():
 	
 	print("Now the stranger started talking made it plain to folks around")
 	print("Was an Arizona ranger wouldn't be too long in town")
-	print("He came here to take an outlaw back alive or maybe dead")
+	print("He came here to take an outlaw back alive or maybe dead")	#Not much to say, it's just the lyrics
 	print("And he said it didn't matter he was after Texas Red")
 	print("After Texas Red\n")
 	
@@ -106,12 +111,11 @@ def main():
 
 #Code
 	
-	print("\nSo? What do you think?\n")
+	print("\nSo? What do you think?\n") #Code asks what User thinks
 
 #User
 	
-	feeling = input("How do you feel about 'Big Iron'? (Happy, sad, angry, romantic) ")
-
+	feeling = input("How do you feel about 'Big Iron'? (happy, sad, angry, romantic) ") 	#User must choose from list
 	if 'happy' in feeling:
 		print("Happy")
 	elif 'sad' in feeling:
@@ -121,14 +125,14 @@ def main():
 	elif 'romantic' in feeling:
 		print("Romantic")
 	else:
-		print("I don't understand")
+		print("I don't understand") #The User didn't choose one of the feeling from the list or misspelt it
 """
 old code
 it's bad...
 very bad...
 
 	if(feeling[0:1] == "I"):
-		if(feeling[7:9] == "it"):
+		if(feeling[7:9] == "it"):   looking at it again, I can change all of these into    if "blahblahblah" in feeling: 
 			print(feeling)
 		elif(feeling[10:12] == "it"):
 			print(feeling)
