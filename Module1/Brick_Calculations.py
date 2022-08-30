@@ -4,9 +4,7 @@ import math
 def main():
 
 	#Word problem
-	print("Kevin tells the police about the brick he threw at the wet bandits.")
-	print("The police want to know the dimension of the brick to find the surface area and volume of it.")
-	print("All the police know is that it's a roman brick, can you help the police with the dimensions?")
+	print("Kevin tells the police about the brick he threw at the wet bandits.\nThe police want to know the dimension of the brick to find the surface area and volume of it.\nAll the police know is that it's a roman brick, can you help the police with the dimensions?")
 
 	#Hehehehe, funny idea
 	answer = input("Will you help the police with the dimensions of the brick? ")
@@ -23,12 +21,10 @@ def main():
 		#Calculate surface area and volume
 		surfaceArea = (length*height)*2+(length*width)*2+(width*height)*2
 		volume = length*height*width
-		print("The surface area of the brick is: " + str(surfaceArea))
-		print("The volume of the brick is: " + str(volume))
+		print("The surface area of the brick is: " + str(surfaceArea) + " square centimeters.")
+		print("The volume of the brick is: " + str(volume) + " centimeters cubed.")
 
 	if 'n' in answer:	#User doesn't want to help the cops
-		print("\nI guess the police would need to find another detective for the case....\n\n")
-		print("MISSION FAILED")
-		print("WE'LL GET 'EM NEXT TIME")
+		print("\nI guess the police would need to find another detective for the case....\n\nMISSION FAILED\nWE'LL GET 'EM NEXT TIME")
 
 main()
