@@ -31,7 +31,7 @@ def main():
 		startRegion_length = len(startRegion)
 		b += 1
 		if(b == 3):
-			print("You know what, since you aren't taking me seriously, screw this shit!")
+			print("You know what, since you aren't taking me seriously, fuck it!")
 			quit()
 
 	if 'north' in startRegion:
