@@ -31,7 +31,7 @@ def main():
 		startRegion_length = len(startRegion)
 		b += 1
 		if(b == 3):
-			print("You know what, since you aren't taking me seriously, fuck you!")
+			print("You know what, since you aren't taking me seriously, screw this shit!")
 			quit()
 
 	if 'north' in startRegion:
@@ -67,3 +67,15 @@ def main():
 		time.sleep(1)
 		quit()
 main()
+
+'''
+use for copy
+
+startRegion = input("What region are you in? ")
+
+startCountry = input("\nWhich country are you in? ")
+
+startCity = input("\n Which city is closest to you? ")
+
+startAirport 
+'''
