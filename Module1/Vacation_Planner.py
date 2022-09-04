@@ -12,7 +12,7 @@ def main():
 
 	print("\n\nYou're planning on taking a vacation that'll last two days and one night to cool down after working for your tiring job for years.\n")
 	time.sleep(3)
-	startRegion = input("What region are you in? North America, Central America, South America, Europe, Middle East, Aisa, Oceana, or Africa? ")
+	startRegion = input("What region are you in? North America, Central America, South America, Europe, Middle East, Asia, Oceana, or Africa? ")
 	startRegion_length = len(startRegion)
 	print("") #I couldn't find a way to do this without messing something else up...
 
