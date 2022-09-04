@@ -27,7 +27,7 @@ def main():
 			a += 1
 		print("\n\nYou didn't input a region")
 		time.sleep(1)
-		startRegion = input("What region are you in? North America, Central America, South America, Europe, Middle East, Aisa, Oceana, or Africa? ")
+		startRegion = input("What region are you in? North America, Central America, South America, Europe, Middle East, Asia, Oceana, or Africa? ")
 		startRegion_length = len(startRegion)
 		b += 1
 		if(b == 2):
