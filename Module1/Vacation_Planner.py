@@ -19,7 +19,7 @@ asia = ['asia', 'Asia']
 oceania = ['oceania', 'Oceania']
 africa = ['africa', 'Africa']
 atlantic = ['Atlantic', 'atlantic', 'Atlantis', 'atlantis']
-space = ['Space', 'space', '']
+space = ['Space', 'space', 'mercury', 'Mercury', 'venus', 'Venus', 'mars', 'Mars', 'jupiter', 'Jupiter', 'saturn', 'Saturn', 'neptune', 'Neptune', 'uranus', 'Uranus', 'pluto', 'Pluto']
 # Countries
 usa = ['america', 'usa', 'u.s.a.', 'u.s.a', 'united states', 'united states of america', 'America', 'USA', 'U.S.A.', 'U.S.A', 'United States', 'United States of America', 'United states', 'United states of america']
 canada = ['canada', 'canadia', 'Canada', 'Canadia', 'maple syrup']
