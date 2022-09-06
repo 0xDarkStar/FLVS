@@ -8,108 +8,99 @@ Meant to calculate cost of:
 import time
 import math
 
-def main():
+# Lists for quick and easy access later
+# Continents
+north = ['north', 'north america', 'North', 'North America', 'North america']
+central = ['central', 'central america', 'Central', 'Central America', 'Central america']
+south = ['south', 'south america', 'South', 'South America', 'South america']
+euro =  ['euro', 'europe', 'eu', 'Euro', 'Europe', 'EU']
+middle = ['middle', 'east', 'middle east', 'Middle', 'East', 'Middle East', 'Middle east']
+asia = ['asia', 'Asia']
+oceania = ['oceania', 'Oceania']
+africa = ['africa', 'Africa']
+atlantic = ['Atlantic', 'atlantic', 'Atlantis', 'atlantis']
+space = ['Space', 'space', '']
+# Countries
+usa = ['america', 'usa', 'u.s.a.', 'u.s.a', 'united states', 'united states of america', 'America', 'USA', 'U.S.A.', 'U.S.A', 'United States', 'United States of America', 'United states', 'United states of america']
+canada = ['canada', 'canadia', 'Canada', 'Canadia', 'maple syrup']
+mex = ['mexico', 'Mexico']
 
-	print("\n\nYou're planning on taking a vacation that'll last two days and one night to cool down after working for your tiring job for years.\n")
-	time.sleep(3)
-	startRegion = input("What region are you in? North America, Central America, South America, Europe, Middle East, Asia, Oceania, or Africa? ")
-	startRegion_length = len(startRegion)
+def main():
+	
+	print("\n\nYou're planning on taking a vacation for two days to cool down after an exhausting week at work.\n")
+	time.sleep(2)
+	destination = input("Where do you want to go? (North America, Central America, South America, Europe, Asia, etc.) ")
+	destination_length = len(destination)
+	destination = destination.replace("!","")
+	destination = destination.replace("?","")  #the "or" condition doesn't work in the .replace for some reason...
+
 	print("") #I couldn't find a way to do this without messing something else up...
 
-	dots = [".", ".", "."]
 	a = 0
 	b = 0
 
-	while(startRegion_length == 0): #They didn't input a region
+	while(destination_length == 0): #They didn't input a Continent
 		while(a <= 2):
-			print("" + dots[a], end ="", flush = True)
+			print(".", end ="", flush = True)
 			time.sleep(1.25)
 			a += 1
-		print("\n\nYou didn't input a region")
+		print("\n\nYou didn't input a continent")
 		time.sleep(1)
-		startRegion = input("What region are you in? North America, Central America, South America, Europe, Middle East, Asia, Oceania, or Africa? ")
-		startRegion_length = len(startRegion)
+		destination = input.float("Where do you want to go? (North America, Central America, South America, Europe, Asia, etc.) ")
+		destination_length = len(destination)
 		b += 1
 		if(b == 2):
+			time.sleep(2)
 			print("\n\nYou know what, since you aren't taking me seriously, fuck it!")
-			quit() #They didn't input a region three times
+			time.sleep(2)
+			quit() #They didn't input a Continent three times
 
 	a = 0
 	b = 0 #resetting the "a" and "b" variable for future use
 
+	if destination in atlantic:
+		print("If you really want to swim with the fishes you can just head to a beach and swim away from shore.")
+		quit()
 
-	if 'north' in startRegion or 'North' in startRegion:
-		startCountry = input("\nWhich country are you in? Canada or U.S.A.? ")
-		if 'canada' in startCountry:
-			countryArea = input ("\nWhere are you in the country? East, West, North, South, North East, North West, etc. ")
+	elif destination in north:
+		print()
 
-		elif 'usa' in startCountry or 'U.S.A.' in startCountry:
-			countryArea = input ("\nWhere are you in the country? East, West, North, South, North East, North West, etc. ")
+	elif destination in central:
+		print()
 
-		else:
-			print("You aren't in either country?")
-			time.sleep(2)
-			print("You might've gotten the wrong region, let me end the program for you.")
-			quit()
+	elif destination in south:
+		print()
 
+	elif destination in euro:
+		print()
 
-	elif 'central' in startRegion or 'Central' in startRegion:
-		startCountry = input("\nWhich country are you in? Mexico, Guatemala, Honduras, El Salvador, Nicaragua, Costa Rica, or Panama? ")
-		if 'mexico' in startCountry:
-			countryArea = input ("\nWhere are you in the country? North or South ")
-		elif 'guatemala' in startCountry:
-			startCity = input("\n Which city is closest to you? ")
-		elif 'honduras' in startCountry:
-			startCity = input("\n Which city is closest to you? ")
-		elif 'el' in startCountry or 'salvador' in startCountry:
-			startCity = input("\n Which city is closest to you? ")
-		elif 'nicaragua' in startCountry:
-			startCity = input("\n Which city is closest to you? ")
-		elif 'costa' in startCountry or 'rica' in startCountry:
-			startCity = input("\n Which city is closest to you? ")
-		elif 'panama' in startCountry:
-			startCity = input("\n Which city is closest to you? ")
-		else:
-			print("You might've gotten the wrong region, I'll end the program for you")
-			quit()
+	elif destination in middle:
+		print()
 
-	elif 'south' in startRegion or 'South' in startRegion:
-		startCountry = input("\nWhich country are you in? Colombia, Venezuela, Guyana, Surname, French Guiana, Brazil, Ecuador, Peru, Bolivia, Paraguay, Uruguay, Argentina, or Chile? ")
+	elif destination in asia:
+		print()
 
-	elif 'europe' in startRegion or 'Europe' in startRegion:
-		startCountry = input("\nWhich country are you in? U.K., Ireland, France, Belgium, Netherlands, Germany, Denmark, Spain, Portugal, I think you get the point.... ")
+	elif destination in oceania:
+		print()
 
-	elif 'middle' in startRegion or 'Middle' in startRegion or 'East' in startRegion or 'east' in startRegion:
-		startCountry = input("\nWhich country are you in? ")
+	elif destination in africa:
+		print()
 
-	elif 'asia' in startRegion or 'Asia' in startRegion:
-		startCountry = input("\nWhich country are you in? ")
-
-	elif 'oceania' in startRegion or 'Oceania' in startRegion:
-		startCountry = input("\nWhich country are you in? ")
-
-	elif 'africa' in startRegion or 'Africa' in startRegion:
-		startCountry = input("\nWhich country are you in? ")
-
-	else:
-		print("How are you nowhere on Earth?")
+	elif destination in space:
+		print("You can't go to space...")
 		time.sleep(2)
-		print("Are you an alien!?")
-		time.sleep(1.5)
-		print("Aliens aren't allowed to use this program!")
-		time.sleep(1)
-		print("\nPROGRAM SHUTTING DOWN")
+		print("If we could go to space, I'd allow it. I'd love to go to space, but we can't. :(")
+		time.sleep(2.5)
+		print("You're going have to restart the program")
+		time.sleep(1.25)
+		print("I really wish we could go though....")
+		time.sleep(.5)
 		quit()
 main()
 
 '''
 use for copy
 
-startRegion = input("What region are you in? ")
+destination = input("\nWhich airport is closest to you? ")
 
-startCountry = input("\nWhich country are you in? ")
-
-startCity = input("\n Which city is closest to you? ")
-
-startAirport 
 '''
