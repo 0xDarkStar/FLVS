@@ -3,7 +3,9 @@
 Made to save and show the projects made for class as well as how I improved upon it if you check the history.
 
 ---
+
 *files starting with "alt" are used for guidance*
+
 ---
 
 ## Module 1
