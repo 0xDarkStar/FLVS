@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # The above is a 'shebang line'
-# If you are running a Linux/Unix machine like Ubuntu or MacOS
-# This line allows it to run as an executable
+# Tells the system how to execute
 
 import time
 import math
