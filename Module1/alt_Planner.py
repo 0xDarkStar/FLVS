@@ -20,6 +20,13 @@ usa = ['america', 'usa', 'u.s.a.', 'u.s.a', 'united states', 'united states of a
 canada = ['canada', 'canadia', 'Canada', 'Canadia', 'maple syrup']
 mex = ['mexico', 'Mexico']
 
+def qCountry(svar):
+	enter = input('Testing, enter country: ')
+	if enter in svar:
+		print('success')
+	else:
+		print('failure')
+
 # ⬇️ no need for two new lines, imo ⬇️
 print('\nYou are planning on taking a quick vacation for two days to cool down after an exhausting work week.\n')
 # time.sleep(3) 
@@ -31,6 +38,9 @@ def start():
 	# You can instead compare the input to the lists
 	if continent in north:
 		print('success')
+		qCountry(usa)
+		qCountry(canada)
+		qCountry(mex)
 	elif continent in central:
 		print('success')
 		qCountry()
