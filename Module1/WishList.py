@@ -68,4 +68,11 @@ while a <= 7:
 
 a = 0
 totalProductCost = float(cost1) + float(cost2) + float(cost3)
+#with taxes and shipping costs (and numbers past 2 digits behind the ".")
+totalProductCost = (totalProductCost * .065) + totalProductCost + 5.99
+#this is to have only 2 digits after the "."
+totalProductCost=totalProductCost*100
+totalProductCost=totalProductCost//1
+totalProductCost=totalProductCost/100
+
 print("\nThe total cost of all those items are $" + str(totalProductCost))
