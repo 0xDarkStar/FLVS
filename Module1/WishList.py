@@ -126,5 +126,3 @@ if totalProductCost > 0.00:
 else:
     time.sleep(2)
     print("You chose none of the products? Why? You could've gotten free stuff!")
-
-print("\nThe total cost of all those items are $" + str(totalProductCost))
