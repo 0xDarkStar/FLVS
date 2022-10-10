@@ -9,12 +9,14 @@ all prices and shipping costs are coming from Amazon
 #imports
 import time, math
 from collections import namedtuple
-
 def main():
 #Products and their costs (from Amazon)
-    global cost1
-    global cost2
-    global cost3
+    global pCost1
+    global pCost2
+    global pCost3
+    global pName1
+    global pName2
+    global pName3
 
     Test = namedtuple("Test", ["name", "cost"])
     a = 0
@@ -40,18 +42,18 @@ def main():
     Blahaj = ("blahaj", "Blahaj", "BLAHAJ", "Ikea", "ikea", "IKEA", "F", "f")
     Blahaj = Test(Blahaj, "139.99")
 
-    Digtrio = ("digtrio", "Digtrio", "DIGTRIO", "G", "g")
+    Digtrio = ("digtrio", "Digtrio", "DIGTRIO", "buff digtrio", "Buff Digtrio", "Buff digtrio", "BUFF DIGTRIO", "G", "g")
     Digtrio = Test(Digtrio, "42.99")
 
-    Pikachu = ("pikachu", "Pikachu", "PIKACHU", "H", "h")
+    Pikachu = ("pikachu", "Pikachu", "PIKACHU", "buff pikachu", "Buff Pikachu", "Buff pikachu", "BUFF PIKACHU", "H", "h")
     Pikachu = Test(Pikachu, "35.99")
 
-    Banana = ("Banana man", "BANANA MAN", "Banana Man", "banana man", "banana", "Banana", "BANANA", "helegeSONG", "helegesong", "HELEGESONG")
+    Banana = ("Banana man", "Banana Man", "BANANA MAN", "banana man", "banana", "Banana", "BANANA", "helegeSONG", "helegesong", "HELEGESONG")
     Banana = Test(Banana, "15.99")
 
     Products = (Jif, Heinz, Asus, Windows, Nike, Blahaj, Digtrio, Pikachu, Banana, Nothing)
 
-#look for the product name in a list
+#look for the product name in a list to return price
     def pCost(product, list):
         if product in list.name:
             product = list.cost
@@ -59,36 +61,59 @@ def main():
         else:
             return False
 
+#look for the product cost from all products to return name
+    def pName(cost, list):
+        if str(cost) in list.cost:
+            cost = list.name[1]
+            return cost
+        else:
+            return False
+
 #List off products the user can choose from
     print("You can choose three products to keep. The products are: \n A. Jif Peanut Butter\n B. 1000 Heinz ketchup single serve packets\n C. ASUS AM4 TUF Gaming X570-Plus (Wi-Fi) AM4 Zen 3 Ryzen 5000 & 3rd Gen Ryzen ATX Motherboard with PCIe 4.0, Dual M.2, 12+2 with Dr. MOS Power Stage\n D. Windows 10 Home 64 Bit OS\n E. Nike Mens Air Force 1 Low Sneaker 8.5 M US\n F. Ikea Blahaj Soft Toy Shark (pack of 3, 39 1/4 inches)\n G. Buff Digtrio Figurine\n H. Buff Pikachu Figurine\n I. Banana Man")
 
 #start asking what they want
+#Product 1
+#Get the cost
     product1 = input("What is the first product you want? ")
     while a <= 9:
         if pCost(product1, Products[a]) != False:
             if pCost(product1, Nothing) != False:
-                cost1 = 0.00
+                pCost1 = 0.00
                 print("You chose nothing")
                 break
-            cost1 = pCost(product1, Products[a]) #I had a print in the function before but it kept on getting ran twice so now it became...
-            print("That will cost you $" + str(cost1) + ".") #...this new print command, and the others I added....
+            pCost1 = float(pCost(product1, Products[a]))
             break
-        elif pCost(product1, Products[a]) == False:
+        else:
             a += 1
             if a == 10:
                 print("You didn't choose anything on the list or didn't spell it write, try again")
                 exit()
 
+#Get the name
+    a = 0
+    if pCost1 > 0.00:
+        while a <= 9:
+            if pName(pCost1, Products[a]) != False:
+                pName1 = pName(pCost1, Products[a])
+                break
+            else:
+                a += 1
+    else:
+        pName1 = "Nothing"
+
+
+#Product 2
+#Get the cost
     product2 = input("What is the second product you want? ")
     a = 0
     while a <= 9:
         if pCost(product2, Products[a]) != False:
             if pCost(product2, Nothing) != False:
-                cost2 = 0.00
+                pCost2 = 0.00
                 print("You chose nothing")
                 break
-            cost2 = pCost(product2, Products[a])
-            print("That will cost you $" + str(cost2) + ".")
+            pCost2 = float(pCost(product2, Products[a]))
             break
         elif pCost(product2, Products[a]) == False:
             a += 1
@@ -96,16 +121,30 @@ def main():
                 print("You didn't choose anything on the list or didn't spell it write, try again")
                 exit()
 
+#Get the name
+    a = 0
+    if pCost2 > 0.00:
+        while a <= 9:
+            if pName(pCost2, Products[a]) != False:
+                pName2 = pName(pCost2, Products[a])
+                break
+            else:
+                a += 1
+    else:
+        pName2 = "Nothing"
+
+
+#Product 3
+#Get the cost
     product3 = input("What is the third product you want? ")
     a = 0
     while a <= 9:
         if pCost(product3, Products[a]) != False:
             if pCost(product3, Nothing) != False:
-                cost3 = 0.00
+                pCost3 = 0.00
                 print("You chose nothing")
                 break
-            cost3 = pCost(product3, Products[a])
-            print("That will cost you $" + str(cost3) + ".")
+            pCost3 = float(pCost(product3, Products[a]))
             break
         elif pCost(product3, Products[a]) == False:
             a += 1
@@ -113,24 +152,67 @@ def main():
                 print("You didn't choose anything on the list or didn't spell it write, try again")
                 exit()
 
+#Get the name
+    a = 0
+    if pCost3 > 0.00:
+        while a <= 9:
+            if pName(pCost3, Products[a]) != False:
+                pName3 = pName(pCost3, Products[a])
+                break
+            else:
+                a += 1
+    else:
+        pName3 = "Nothing"
+
+
     a = 0
     #add the costs of the products they chose
-    totalProductCost = float(cost1) + float(cost2) + float(cost3)
-    if totalProductCost > 0.00:
+    Subtotal = float(pCost1) + float(pCost2) + float(pCost3)
+    if Subtotal > 0.00:
+        Tax = Subtotal * .065
+        Tax=Tax*100
+        Tax=Tax//1
+        Tax=Tax/100
         #add the 6.5% tax and $5.99 shipping cost
-        totalProductCost = (totalProductCost * .065) + totalProductCost + 5.99
+        Total = Tax + Subtotal + 5.99
         #this is to have only 2 digits after the "."
-        totalProductCost=totalProductCost*100
-        totalProductCost=totalProductCost//1
-        totalProductCost=totalProductCost/100
+        Total=Total*100
+        Total=Total//1
+        Total=Total/100
         time.sleep(1)
-        print("\nI can't guarantee that they'd arrive at your home undamaged....")
+        print("""
+        Your Wishlist Results:
+
+        Item                        Cost
+
+        """ + pName1 + """                  $""" + str(pCost1) + """
+        """ + pName2 + """                  $""" + str(pCost2) + """
+        """ + pName3 + """                  $""" + str(pCost3) + """
+        ------------------------------------------
+            Subtotal:              $""" + str(Subtotal) + """
+            Tax:                   $""" + str(Tax) + """
+            Shipping:              $5.99
+            Total:                 $""" + str(Total) + """
+
+        I hope you enjoyed this service
+        """)
         time.sleep(2)
-        print("\nThe total cost of all those items are $" + str(totalProductCost) + ".\n")
-        time.sleep(1)
-        print("Now give me the money!\n")
+        print("PLEASE GIVE ME A FIVE STAR REVIEW ON YELP!")
     #they chose "nothing" for all three products
     else:
         time.sleep(2)
         print("You really don't want any of them? Okay then... have fun on your day without this stuff.")
 main()
+
+"""
+Should look like this
+
+Item                        Cost
+
+Product1                    $?.??
+Product2                    $?.??
+Product3                    $?.??
+---------------------------------------
+    Subtotal               $??.??
+    Tax
+"""
