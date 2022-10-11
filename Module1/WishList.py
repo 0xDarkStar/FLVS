@@ -42,8 +42,8 @@ def main():
     Blahaj = ("blahaj", "Blahaj", "BLAHAJ", "Ikea", "ikea", "IKEA", "F", "f")
     Blahaj = Test(Blahaj, "139.99")
 
-    dugtrio = ("dugtrio", "dugtrio", "dugtrio", "buff dugtrio", "Buff dugtrio", "Buff dugtrio", "BUFF dugtrio", "G", "g")
-    dugtrio = Test(dugtrio, "42.99")
+    Dugtrio = ("dugtrio", "dugtrio", "dugtrio", "buff dugtrio", "Buff dugtrio", "Buff dugtrio", "BUFF dugtrio", "G", "g")
+    Dugtrio = Test(Dugtrio, "42.99")
 
     Pikachu = ("pikachu", "Pikachu", "PIKACHU", "buff pikachu", "Buff Pikachu", "Buff pikachu", "BUFF PIKACHU", "H", "h")
     Pikachu = Test(Pikachu, "35.99")
@@ -51,7 +51,7 @@ def main():
     Banana = ("Banana man", "Banana Man", "BANANA MAN", "banana man", "banana", "Banana", "BANANA", "helegeSONG", "helegesong", "HELEGESONG")
     Banana = Test(Banana, "15.99")
 
-    Products = (Jif, Heinz, Asus, Windows, Nike, Blahaj, dugtrio, Pikachu, Banana, Nothing)
+    Products = (Jif, Heinz, Asus, Windows, Nike, Blahaj, Dugtrio, Pikachu, Banana, Nothing)
 
 #look for the product name in a list to return price
     def pCost(product, list):
