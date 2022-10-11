@@ -15,6 +15,6 @@ This module contains work used for module 1 as the name implies
 2. Brick_Calculations.py
 3. Vacation_Planner.py
 
-## Functions
+## TooLazyForMath
 
-1. If_functions.py
+1. Triangles.py
