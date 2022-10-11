@@ -17,4 +17,4 @@ This module contains work used for module 1 as the name implies
 
 ## TooLazyForMath
 
-1. Triangles.py
+1. RightTriangles.py
