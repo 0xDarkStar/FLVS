@@ -42,7 +42,7 @@ def main():
     Blahaj = ("blahaj", "Blahaj", "BLAHAJ", "Ikea", "ikea", "IKEA", "F", "f")
     Blahaj = Test(Blahaj, "139.99")
 
-    Dugtrio = ("dugtrio", "dugtrio", "dugtrio", "buff dugtrio", "Buff dugtrio", "Buff dugtrio", "BUFF dugtrio", "G", "g")
+    Dugtrio = ("dugtrio", "Dugtrio", "DUGTRIO", "buff dugtrio", "Buff Dugtrio", "Buff dugtrio", "BUFF DUGTRIO", "G", "g")
     Dugtrio = Test(Dugtrio, "42.99")
 
     Pikachu = ("pikachu", "Pikachu", "PIKACHU", "buff pikachu", "Buff Pikachu", "Buff pikachu", "BUFF PIKACHU", "H", "h")
