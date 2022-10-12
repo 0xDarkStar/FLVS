@@ -1,11 +1,11 @@
 #My first time messing with the turtle module
 
-import turtle
+import turtle, time
 
 def main():
 
-    tom = turtle.Turtle()
-    tom.left(45)
+	tom = turtle.Turtle()
+	tom.left(45)
 	tom.forward(50)
 	a = 0
 	while a <= 6:
@@ -41,4 +41,5 @@ def main():
 	tom.forward(10)
 	tom.left(25)
 	tom.forward(60)
+	time.sleep(2.5)
 main()
