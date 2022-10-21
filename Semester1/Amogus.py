@@ -8,97 +8,169 @@ draw the knife in the killer's hand
 if knife in dead body's hand, say it was a suicide and add shocked faces to others
 '''
 
-# TO DO: Draw knife, draw characters, draw background
+# TO DO: Draw knife, draw dead characters, draw background
 
 import turtle, time, random
 
 turtle.setup(850,850)
 
-def hidden(turtle):
-    if turtle.isvisible() == False: #was ran again (possibly), delete what was drawn before 
-        turtle.showturtle()
-        turtle.clear()
-    else:
-        turtle.hideturtle() #hide the turtle
+List = (1, 2, 3, 4) #list to choose who kills and who dies
+#dead = random.choice(List) #choose who dies
+#killer = random.choice(List) #choose who kills
+dead = 5
+killer = 5
 
+def hide(turtle):
+    turtle.penup()
+    turtle.hideturtle()
 
 def background():
+    turtle.bgcolor("light blue")
     leftWall = turtle.Turtle() #draw the background (duh)
     middleWall = turtle.Turtle()
     rightWall = turtle.Turtle()
     floor = turtle.Turtle()
-    hidden(leftWall)
-    hidden(middleWall)
-    hidden(rightWall)
-    hidden(floor)
-    leftWall.setpos(-400,-400)
-    middleWall.setpos(-350,-400)
-    rightWall.setpos(400,-400)
+    hide(leftWall)
+    hide(middleWall)
+    hide(rightWall)
+    hide(floor)
+
+    def walls(turtle):
+        turtle.pendown()
+        turtle.showturtle()
+        turtle.pencolor("black")
+        if turtle == rightWall:
+            turtle.left(130)
+            turtle.forward(610)
+            turtle.right(40)
+            turtle.forward(500)
+            turtle.hideturtle
+        else:
+            turtle.left(50)
+            if turtle == middleWall:
+                turtle.forward(570.71)
+                turtle.right(100)
+            else:
+                turtle.forward(610)
+                turtle.left(40)
+            turtle.forward(570.71)
+            turtle.hideturtle()
+
+    leftWall.setpos(-450,-400)
+    middleWall.setpos(-372,-455)
+    rightWall.setpos(450,-400)
     floor.setpos(-399,-400)
-    hidden(leftWall)
-    hidden(middleWall)
-    hidden(rightWall)
-    hidden(floor)
+    walls(leftWall)
+    walls(middleWall)
+    walls(rightWall)
+    
 
 
-def amogus(color):
-    color.forward(50) #draw the character in their respective color
+def alive(turtle, color, num):
+    turtle.pendown()
+    turtle.showturtle()
+    turtle.speed(0)
+    turtle.forward(5)#draw the character in their respective color
+    turtle.left(90)
+    turtle.begin_fill()
+    turtle.color("black", color)
+    turtle.forward(10)
+    for _ in range(10): #top of head
+        turtle.left(18)
+        turtle.forward(3)
+    turtle.forward(17)
+    for _ in range(5): #left foot
+        turtle.left(36)
+        turtle.forward(2.5)
+    turtle.forward(2)
+    turtle.right(90)
+    turtle.forward(5.55)
+    turtle.back(2)
+    turtle.right(90)
+    turtle.forward(5)
+    for _ in range(5): #right foot
+        turtle.left(36)
+        turtle.forward(2.5)
+    turtle.forward(18)
+    turtle.end_fill() #go back up to start visor
+    turtle.right(90)
+    turtle.fillcolor("white")
+    turtle.begin_fill() #starting visor
+    for _ in range(10):
+        turtle.right(18)
+        turtle.forward(1)
+    turtle.forward(4)
+    for _ in range(10):
+        turtle.right(18)
+        turtle.forward(1)
+    turtle.forward(4)
+    turtle.end_fill() #ending visor
+    turtle.left(90)
+    turtle.penup()
+    turtle.back(3)
+    turtle.left(90)
+    turtle.forward(18.94)
+    turtle.pendown()
+    turtle.begin_fill() #time to start the backpack
+    turtle.fillcolor(color)
+    turtle.forward(1)
+    for _ in range(5):
+        turtle.left(18)
+        turtle.forward(1)
+    turtle.forward(7)
+    for _ in range(5):
+        turtle.left(18)
+        turtle.forward(1)
+    turtle.end_fill() #backpack is done
+    turtle.hideturtle() #character is done
+    if killer == num:
+        turtle.penup()
+        turtle.goto(0,100)
+  
 
+def start():
+    background()
+    print(killer)
+    print(dead)
 
-background()
-List = (1, 2, 3, 4) #list to choose who kills and who dies
-dead = random.choice(List) #choose who dies
-killer = random.choice(List) #choose who kills
-print(killer)
-print(dead)
+    red = turtle.Turtle() #red amogus guy
+    hide(red)
+    red.pensize(3)
+    red.setpos(0,100)
+    if dead != 1:
+        alive(red, "red", 1)
+    if dead == 1: #he dead
+        red.left(90)
+        red.forward(100)
 
-red = turtle.Turtle()
-hidden(red)
-red.pensize(10)
-red.pencolor("red")
-red.forward(60)
-if killer == 1:
-    hidden(red)
-    red.right(90)
-    red.forward(100)
-if dead == 1:
-    red.left(90)
-    red.forward(100)
-    red.goto(350,0)
+    blue = turtle.Turtle() #blue amogus guy
+    hide(blue)
+    blue.pensize(3)
+    blue.setpos(125,-100)
+    if dead != 2:
+        alive(blue, "blue", 2)
+    if dead == 2: #he dead
+        blue.left(90)
+        blue.forward(100)
 
-blue = turtle.Turtle()
-blue.pensize(10)
-blue.pencolor("blue")
-blue.left(90)
-blue.forward(60)
-if killer == 2:
-    blue.right(90)
-    blue.forward(100)
-if dead == 2:
-    blue.left(90)
-    blue.forward(100)
+    gray = turtle.Turtle() #gray amogus guy
+    hide(gray)
+    gray.pensize(3)
+    if dead != 3:
+        alive(gray, "gray", 3)
+    if dead == 3: #he dead
+        gray.left(90)
+        gray.forward(100)
 
-black = turtle.Turtle()
-black.pensize(10)
-black.right(90)
-black.forward(60)
-if killer == 3:
-    black.right(90)
-    black.forward(100)
-if dead == 3:
-    black.left(90)
-    black.forward(100)
+    green = turtle.Turtle() #green amogus guy
+    hide(green)
+    green.pensize(3)
+    green.setpos(-125,-100)
+    if dead != 4:
+        alive(green, "green", 4)
+    if dead == 4: #he dead
+        green.left(50)
+        green.forward(100)
 
-green = turtle.Turtle()
-green.pensize(10)
-green.pencolor("green")
-green.left(180)
-green.forward(60)
-if killer == 4:
-    green.right(90)
-    green.forward(100)
-if dead == 4:
-    green.left(90)
-    green.forward(100)
-
+start()
 time.sleep(2)
