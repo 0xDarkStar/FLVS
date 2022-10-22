@@ -13,12 +13,6 @@ if knife in dead body's hand, say it was a suicide
 from collections import namedtuple
 import turtle, time, random
 
-Test = namedtuple("Test", ["name", "number"])
-
-Red = Test("Red", 1)
-Blue = Test("Blue", 2)
-Gray = Test("Gray", 3)
-Green = Test("Green", 4)
 
 List = (1, 2, 3, 4) #list to choose who kills and who dies
 dead = random.choice(List) #choose who dies
