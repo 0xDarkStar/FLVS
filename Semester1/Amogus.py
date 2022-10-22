@@ -13,7 +13,6 @@ if knife in dead body's hand, say it was a suicide
 from collections import namedtuple
 import turtle, time, random
 
-turtle.setup(850,850)
 Test = namedtuple("Test", ["name", "number"])
 
 Red = Test("Red", 1)
