@@ -138,7 +138,7 @@ def frw(turtle, amount, lvl, list, cough):
                 elif turtle.xcor() in range(25, 225) and turtle.ycor() == -225:
                     crash = crashed(turtle, list)
                 
-    if crash == False: # James Blake - Life Is Not The Same (Official Lyric Video) 
+    if crash == False:
         moves.append(b)
         moves.append(c)
         turtle.speed(0)
