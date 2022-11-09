@@ -1,5 +1,5 @@
 # Make a game to have the user move around as the turtle, draw boundaries to make sure the turtle doesn't hit anything
-import turtle
+import turtle, keyboard
 from os import system
 from time import sleep
 
@@ -7,7 +7,31 @@ screen = turtle.Screen()
 screen.setup(width = 550, height = 550)
 
 # Lists
-moves = ["end"]
+wallsL = [(225, 275, 225, 225), (225, 225, 175, 225)]
+def search(xpos, ypos):
+    item = [item for item in wallsL if xpos >= wallsL[0[0]] and xpos <= wallsL[0[1]]]
+    print(item)
+    if item != []:
+        print("Found it in X")
+        item1 = True
+    else:
+        item1 = False
+    item = [item for item in wallsL if ypos >= wallsL[0[2]] and ypos <= wallsL[0[3]]]
+    print(item)
+    if item != []:
+        print("Found it in Y")
+        item2 = True
+    else:
+        item2 = False
+
+    if item1 == True and item2 == True:
+        item = True
+        sleep(4)
+        return item
+    else:
+        item = False
+        sleep(4)
+        return item
 
 #Functions
 def tunnel(turtle, lvl):
@@ -15,137 +39,39 @@ def tunnel(turtle, lvl):
     while a == 0:
         if lvl == "lvl1":
             move = input("/------------------\ \n| frw = forward    |\n| r = right        |\n| l = left         |\n| exit = quit      |\n|                  |\n\------------------/\n")
-            if move != "frw" and move != "r" and move != "l" and move != "exit":
+            if move != "frw" and move != "r" and move != "l" and move != "exit" and move != "goto":
                 system("cls")
             else:
                 return move
         elif lvl == "lvl2":
             if turtle.xcor() in range(0, 50) and turtle.ycor() in range(0,50):
                 move = input("/------------------\ \n| frw = forward    |\n| r = right        |\n| l = left         |\n| exit = quit      |\n| tp = teleport    |\n\------------------/\n")
-                if move != "frw" and move != "r" and move != "l" and move != "exit" and move != "tp":
+                if move != "frw" and move != "r" and move != "l" and move != "exit" and move != "tp" and move != "goto":
                     system("cls")
                 elif move == "tp":
                     turtle.speed(2)
                     turtle.penup()
-                    turtle.goto(filler)
+                    turtle.goto("filler")
                     turtle.pendown()
                     turtle.speed(0)
                 else:
                     return move
             else:
                 move = input("/------------------\ \n| frw = forward    |\n| r = right        |\n| l = left         |\n| exit = quit      |\n|                  |\n\------------------/\n")
-                if move != "frw" and move != "r" and move != "l" and move != "exit":
+                if move != "frw" and move != "r" and move != "l" and move != "exit" and move != "goto":
                     system("cls")
                 else:
                     return move
 
-def crashed(turtle, list):
-    turtle.speed(2)
-    crash = True
-    moves.append(b)
-    moves.append(c)
-    print(moves)
-    for _ in reversed(list):
-        if _ == "end":
-            print("You crashed. Try again.")
-            sleep(2)
-
-        elif _ == "frw":
-            i = _
-
-        elif _ == "l":
-            i = _
-
-        elif _ == "r":
-            i = _
-
-        elif i == "frw":
-            turtle.back(_)
-
-        elif i == "l":
-            turtle.right(_)
-
-        elif i == "r":
-            turtle.left(_)
-
-    turtle.clear()
-    return crash
-
-#for walls, if it runs into a line between two points, kill the user and make them restart
-def frw(turtle, amount, lvl, list, cough):
-    global moves, b, c
-    b = 0
-    c = "frw"
-    crash = False
-    for _ in range(amount):
-        if crash == False:
-            turtle.forward(1)
-            b += 1
-            if turtle.xcor() >= 275 or turtle.xcor() <= -275:
-                crash = crashed(turtle, list)
-
-            elif turtle.ycor() >= 275 or turtle.ycor() <=-275:
-                crash = crashed(turtle, list)
-
-
-            if lvl == "lvl1":
-                if turtle.xcor() in range(225, 275) and turtle.ycor() == 225:
-                    crash = crashed(turtle, list)               
-                elif turtle.xcor() == 225 and turtle.ycor() in range(175, 225):
-                    crash = crashed(turtle, list)
-                elif turtle.xcor() in range (225,275) and turtle.ycor() == 125:
-                    crash = crashed(turtle, list)             
-                elif turtle.xcor() == 225 and turtle.ycor() in range(-25, 75):
-                    crash = crashed(turtle, list)
-                elif turtle.xcor() in range(25, 225) and turtle.ycor() == -75:
-                    crash = crashed(turtle, list)
-                elif turtle.xcor() == 25 and turtle.ycor() in range(-75, 275):
-                    crash = crashed(turtle, list)
-                elif turtle.xcor() in range(175, 225) and turtle.ycor() == 75:
-                    crash = crashed(turtle, list)
-                elif turtle.xcor() == 175 and turtle.ycor() in range(-75, 75):
-                    crash = crashed(turtle, list)
-                elif turtle.xcor() == 75 and turtle.ycor() in range(225, 275):
-                    crash = crashed(turtle, list) 
-                elif turtle.xcor() == 125 and turtle.ycor() in range(225, 275):
-                    crash = crashed(turtle, list)
-                elif turtle.xcor() in range(125, 175) and turtle.ycor() == 225:
-                    crash = crashed(turtle, list)
-                elif turtle.xcor() == 175 and turtle.ycor() in range(125, 225):
-                    crash = crashed(turtle, list)
-                elif turtle.xcor() in range(75, 175) and turtle.ycor() == 125:
-                    crash = crashed(turtle, list)
-                elif turtle.xcor() == 75 and turtle.ycor() in range(125, 175):
-                    crash = crashed(turtle, list)                   
-                elif turtle.xcor() in range(75, 125) and turtle.ycor() == 175:
-                    crash = crashed(turtle, list)
-                elif turtle.xcor() in range(75, 125) and turtle.ycor() == 75:
-                    crash = crashed(turtle, list)
-                elif turtle.xcor() == 125 and turtle.ycor() in range(-75, 75):
-                    crash = crashed(turtle, list)
-                elif turtle.xcor() in range(25, 75) and turtle.ycor() == 25:
-                    crash = crashed(turtle, list)
-                elif turtle.xcor() in range(75, 125) and turtle.ycor() == -25:
-                    crash = crashed(turtle, list)
-                elif turtle.xcor() in range(125, 275) and turtle.ycor() == -125:
-                    crash = crashed(turtle, list)
-                elif turtle.xcor() == 75 and turtle.ycor() in range(-175, -125):
-                    crash = crashed(turtle, list)
-                elif turtle.xcor() in range(75, 225) and turtle.ycor() == -175:
-                    crash = crashed(turtle, list)
-                elif turtle.xcor() == 225 and turtle.ycor() in range(-225, -175):
-                    crash = crashed(turtle, list)
-                elif turtle.xcor() in range(25, 225) and turtle.ycor() == -225:
-                    crash = crashed(turtle, list)
-                
-    if crash == False:
-        moves.append(b)
-        moves.append(c)
-        turtle.speed(0)
-    elif crash == True:
-        moves = ["end"]
-        turtle.speed(0)
-    return cough
+def maybe(turtle):
+    xpos = turtle.xcor()
+    ypos = turtle.ycor()
+    crash = search(xpos, ypos)
+    if crash == True:
+        turtle.back(25)
+    else:
+        print("You didn't crash")
+        
 
 def wall(go1, go2, head, walls):
     walls.penup()
@@ -183,8 +109,8 @@ def lvl1():
     wall(225, -75, 180, walls)
     walls.forward(150) # line (225 - 25, -75)
 
-    walls.right(90)
-    walls.forward(350) # line (25, 275 - -75 )
+    wall(25, -225, 90, walls)
+    walls.forward(450) # line (25, 275 - -225 )
 
     wall(75, 275, 270, walls) # line (75, 225 - 275)
 
@@ -224,13 +150,24 @@ def lvl1():
     walls.right(90)
     walls.forward(200) # line (25 - 225, -225)
 
+    wall(-25, -225, 180, walls)
+    walls.forward(100) # line (-175 - -25, -225)
+
+    wall(-25, -225, 90, walls)
+    walls.forward(150) # line (-25, -225 - -25)
+    
+    wall(-225, -225, 90, walls) # line (-225, -225 - -175)
+    walls.left(90)
+    walls.forward(50) # line (-275 - -225, -175)
+
 #start
 def start():
     user = turtle.Turtle()
     user.pencolor("green")
     user.speed(0)
     user.penup()
-    user.goto(250, 250)
+    user.goto(250, 250) #true start
+    #user.goto(-250, -200) #just to test
     user.setheading(180)
     user.pendown()
     lvl1()
@@ -242,18 +179,21 @@ def start():
             system("cls")
             exit()
         elif move == "frw":
-            amount = int(input("How far do you want to go? (only input a number) "))
+            user.forward(25)
+            hmm = maybe(user)
+            if hmm == True:
+                user.back(25)
 
-            a = frw(user, amount, "lvl1", moves, a)
         elif move == "r":
-            amount = int(input("How much do you want to turn. "))
-            user.right(amount)
+            user.right(90)
+
         elif move == "l":
-            amount = int(input("How much do you want to turn. "))
-            user.left(amount)
-        if move != "frw":
-            moves.append(amount)
-            moves.append(move)
+            user.left(90)
+
+        elif move == "goto":
+            x = int(input("First coordinate"))
+            y = int(input("Second coord"))
+            user.goto(x, y)
 
 
 start()
